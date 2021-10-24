@@ -20,7 +20,8 @@ namespace GB
             Map = (genCell[,]) Array.CreateInstance(typeof(genCell), new int[] { Rows, Cols });
             ClearMap(ref Map);
             RemoveWall(ref Map);
-            GenerateGoodBouses(ref Map, GoodBonuses);
+            GenerateBonuses(ref Map, GoodBonuses, BonusTypes.Good);
+            GenerateBonuses(ref Map, BadBonuses, BonusTypes.Bad);
         }
 
         private void ClearMap(ref genCell[,] M)
@@ -108,7 +109,7 @@ namespace GB
             }
         }
 
-        private void GenerateGoodBouses(ref genCell[,] M, int count)
+        private void GenerateBonuses(ref genCell[,] M, int count, BonusTypes type)
         {
             for (var i = 0; i < count; i++)
             {
@@ -117,7 +118,7 @@ namespace GB
 
                 if (M[x, y].Value == 0)
                 {
-                    PlaceBonus(ref M, x, y, 1);
+                    M[x, y].Value = (int)type;
                     continue;
                 }
                 else
@@ -140,16 +141,10 @@ namespace GB
 
                     if (M[x, y].Value == 0)
                     {
-                        PlaceBonus(ref M, x, y, 1);
+                        M[x, y].Value = (int)type;
                     }
                 }
             }
         }
-
-        private void PlaceBonus(ref genCell[,] M, int x, int y, int type)
-        {
-            M[x, y].Value = type;
-        }
- 
     }
 }
