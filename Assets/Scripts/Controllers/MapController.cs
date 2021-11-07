@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace RollABall
 {
-    internal sealed class MapController
+    internal sealed class MapController : IController
     {
         public MapCell[,] Map { get; private set; }
         public int Rows { get; private set; }

@@ -11,6 +11,7 @@ namespace RollABall
 
             var PlayerModel = new PlayerModel(data.Player.Prefab, data.Player.Speed, data.Player.Position, data.Player.Name);
 
+            //controllers.Add(new MapController());
             controllers.Add(new LevelController(data.Level));
         }
     }
