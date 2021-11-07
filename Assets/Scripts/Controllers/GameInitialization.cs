@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using Model;
 
 namespace RollABall
 {
@@ -9,10 +8,15 @@ namespace RollABall
         {
             Camera camera = Camera.main;
 
-            var PlayerModel = new PlayerModel(data.Player.Prefab, data.Player.Speed, data.Player.Position, data.Player.Name);
+            var inputInitialization = new InputInitialization();
+            var playerModel = new PlayerModel(data.Player.Prefab, data.Player.Speed, data.Player.Position, data.Player.Name);
+
+            controllers.Add(inputInitialization);
 
             //controllers.Add(new MapController());
             controllers.Add(new LevelController(data.Level));
+            controllers.Add(new InputController(inputInitialization.GetInput()));
+            controllers.Add(new MoveController(inputInitialization.GetInput(), playerInitialization.GetPlayer(), playerModel));
         }
     }
 }

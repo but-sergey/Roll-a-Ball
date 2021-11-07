@@ -2,7 +2,7 @@
 
 namespace RollABall
 {
-    internal sealed class LevelController : IController, IInitialization
+    internal sealed class LevelController : IInitialization
     {
         private LevelData _level;
         private MapController _map;

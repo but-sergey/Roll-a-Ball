@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Model
+namespace RollABall
 {
     public interface IPlayerModel
     {

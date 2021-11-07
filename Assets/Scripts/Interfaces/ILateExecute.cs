@@ -1,6 +1,6 @@
 ﻿namespace RollABall
 {
-    internal interface ILateExecute
+    internal interface ILateExecute : IController
     {
         public void LateExecute(float deltaTime);
     }

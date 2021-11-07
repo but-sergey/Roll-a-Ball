@@ -1,6 +1,6 @@
 ﻿namespace RollABall
 {
-    internal interface IInitialization
+    internal interface IInitialization : IController
     {
         public void Initialization();
     }

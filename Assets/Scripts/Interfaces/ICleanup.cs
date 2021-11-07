@@ -1,6 +1,6 @@
 ﻿namespace RollABall
 {
-    internal interface ICleanup
+    internal interface ICleanup : IController
     {
         public void Cleanup();
     }
