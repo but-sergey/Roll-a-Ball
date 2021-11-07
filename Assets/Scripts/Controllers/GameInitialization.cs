@@ -10,8 +10,11 @@ namespace RollABall
 
             var inputInitialization = new InputInitialization();
             var playerModel = new PlayerModel(data.Player.Prefab, data.Player.Speed, data.Player.Position, data.Player.Name);
+            var playerFactory = new PlayerFactory(playerModel);
+            var playerInitialization = new PlayerInitialization(playerFactory, playerModel.Position);
 
             controllers.Add(inputInitialization);
+            controllers.Add(playerInitialization);
 
             //controllers.Add(new MapController());
             controllers.Add(new LevelController(data.Level));
