@@ -17,9 +17,11 @@ namespace RollABall
             controllers.Add(playerInitialization);
 
             //controllers.Add(new MapController());
+            controllers.Add(new CameraInitialization(camera.transform, playerModel.Position));
             controllers.Add(new LevelController(data.Level));
             controllers.Add(new InputController(inputInitialization.GetInput()));
             controllers.Add(new MoveController(inputInitialization.GetInput(), playerInitialization.GetPlayer(), playerModel));
+            controllers.Add(new CameraController(playerInitialization.GetPlayer(), camera.transform));
         }
     }
 }
