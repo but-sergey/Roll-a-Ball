@@ -7,7 +7,10 @@ namespace RollABall
     public sealed class Data : ScriptableObject
     {
         [SerializeField] private string _playerDataPath;
+        [SerializeField] private string _levelDataPath;
+
         private PlayerData _player;
+        private LevelData _level;
 
         public PlayerData Player
         {
@@ -19,6 +22,19 @@ namespace RollABall
                 }
 
                 return _player;
+            }
+        }
+
+        public LevelData Level
+        {
+            get
+            {
+                if(_level == null)
+                {
+                    _level = Load<LevelData>(Path.Combine("Data", _levelDataPath));
+                }
+
+                return _level;
             }
         }
 
