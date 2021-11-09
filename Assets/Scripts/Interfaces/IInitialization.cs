@@ -1,7 +1,7 @@
-﻿namespace GB.Interfaces
+﻿namespace RollABall
 {
-    interface IInitialization
+    internal interface IInitialization : IController
     {
-        void Action();
+        public void Initialization();
     }
 }
