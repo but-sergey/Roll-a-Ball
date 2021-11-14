@@ -18,6 +18,7 @@ namespace RollABall
         public void LateExecute(float deltaTime)
         {
             _mainCamera.position = _player.position + _offset;
+            _mainCamera.LookAt(_player.position);
         }
     }
 }
